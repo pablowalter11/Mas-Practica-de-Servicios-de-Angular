@@ -1,0 +1,85 @@
+<fieldset>
+    <legend>Ingrese Los Datos Del Nuevo Cuchillo</legend>
+    <form [formGroup]="form" (ngSubmit)="addCuchillo()">
+        <label for="">Nombre</label>
+        <input type="text" formControlName="nombre">
+
+        <div *ngIf="form.controls['nombre'].getError('required') && form.controls['nombre'].touched">
+            <div>Campo Requerido</div>
+        </div> <br>
+
+        <label for="">Tipo:</label>
+        <select name="" id="" formControlName="tipo">
+            <option value="" disabled selected>Seleccione el tipo del cuchillo</option>
+            <option value="chef">Chef</option>
+            <option value="santoku">Santoku</option>
+            <option value="pan">Pan</option>
+            <option value="deshuesador">Deshuesador</option>
+            <option value="mondador">Mondador</option>
+            <option value="fileteador">Fileteador</option>
+            <option value="chino">Chino</option>
+            <option value="caza">Caza</option>
+        </select>
+        <div *ngIf="form.controls['tipo'].getError('required') && form.controls['tipo'].touched">
+            <div>Campo Requerido</div>
+        </div> <br>
+         
+        <label for="">Tipo de Filo:</label>
+        <select name="" id="" formControlName="tipo_filo">
+            <option value="" disabled selected>Seleccione el tipo de filo</option>
+            <option value="liso">Liso</option>
+            <option value="dentado">Dentado</option>
+        </select>
+        <div *ngIf="form.controls['tipo_filo'].getError('required') && 
+                    form.controls['tipo_filo'].touched">
+            <div>Campo Requerido</div>
+        </div> <br>
+
+        <label for="">Material de la Hoja:</label>
+        <select name="" id="" formControlName="material_hoja">
+            <option value="" disabled selected>Seleciones el material de la hoja</option>
+            <option value="acero inoxidable">Acero Inoxidable</option>
+            <option value="acero al carbono">Acero al Carbono</option>
+            <option value="ceramica">Cerámica</option>
+        </select>
+        <div *ngIf="form.controls['material_hoja'].getError('required') && 
+                    form.controls['material_hoja'].touched">
+            <div>Campo Requerido</div>
+        </div> <br>
+        
+        <label for="">Material del Mango:</label>
+        <select name="" id="" formControlName="material_mango">
+            <option value="" disabled selected>Selecion el material del mango</option>
+            <option value="madera">Madera</option>
+            <option value="metal">Metal</option>
+            <option value="plastico">Plástico</option>
+            <option value="hueso">Hueso</option>
+        </select>
+        <div *ngIf="form.controls['material_mango'].getError('required') && 
+                    form.controls['material_mango'].touched">
+            <div>Campo Requerido</div>
+        </div> <br>
+
+        <label for="">Longitud de la Hoja:</label>
+        <input type="number" formControlName="longitud_hoja">
+        <div *ngIf="form.controls['longitud_hoja'].getError('required') &&
+                    form.controls['longitud_hoja'].touched">
+            <div>Campo Requerido</div>
+            <div *ngIf="form.controls['longitud_hoja'].getError('min')">
+                <div>La hoja de un cuchillo debe tener un filo mínimo de 7cm.</div>
+            </div>
+        </div> <br>
+
+        <label for="">Longitud Total:</label>
+        <input type="number" formControlName="longitud_total">
+        <div *ngIf="form.controls['longitud_total'].getError('required') &&
+                    form.controls['longitud_total'].touched">
+            <div>Campo Requerido</div>
+            <div *ngIf="form.controls['longitud_total'].getError('min')">
+                <div>La longitud de un cuchillo debe tener un mínimo de 11cm.</div>
+            </div>
+        </div> <br>
+
+        <button>Agregar</button>
+    </form>
+</fieldset>

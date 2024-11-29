@@ -1,0 +1,6 @@
+<div>
+    <h2>{{cuchi?.nombre}}</h2>
+    <button [routerLink]="['/detail/',cuchi?.id]">Ver Detalles</button>
+    <button [routerLink]="['/update/',cuchi?.id]">Actualizar</button>
+    <button (click)="deleteCuchilloById(cuchi?.id)">Eliminar</button>
+</div>
